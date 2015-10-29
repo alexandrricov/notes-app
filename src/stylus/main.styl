@@ -1,0 +1,65 @@
+global-reset()
+
+// ##########
+// global variables
+// ##########
+// color-green = #9aac02
+
+// ##########
+// layout classes
+// ##########
+.l-wrap
+	font-system()
+
+.l-container
+	max-width 480px
+	padding-left 10px
+	padding-right 10px
+	margin-left auto
+	margin-right auto
+
+	&.m-large
+		max-width 768px
+
+.l-h1
+	font-size 30px
+	font-weight bold
+	margin-bottom 10px
+	text-align center
+
+.l-h2
+	font-size 24px
+	font-weight bold
+	margin-bottom 10px
+
+// ##########
+// utility classes
+// ##########
+
+.u-row
+	margin-left -5px
+	margin-right -5px
+	display flex
+
+.u-cell-6
+	width 50%
+	padding-left 5px
+	padding-right 5px
+
+
+// ##########
+// common styles
+// ##########
+*
+	&
+	&:before
+	&:after
+		box-sizing border-box
+
+html
+body
+	min-height 100%
+
+button
+	cursor pointer
+	font-system()

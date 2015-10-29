@@ -1,0 +1,68 @@
+extends blocks/layout.jade
+
+block content
+	.l-container
+		h1.l-h1 LiveTex notes
+		.u-row
+			.u-cell-6
+				h2.l-h2 Edit note
+				form.edit-note
+					input.edit-note__heading(type="text")
+					textarea.edit-note__text(name="", cols="30", rows="10")
+					button.edit-note__submit Add
+			.u-cell-6
+				h2.l-h2 Notes
+				ul.note-list
+					li.note-list__item
+						a.note-list__link(href="#") Note 1
+						button.note-list__remove &times;
+					li.note-list__item
+						a.note-list__link(href="#") Note 2
+						button.note-list__remove &times;
+					li.note-list__item
+						a.note-list__link(href="#") Note 3
+						button.note-list__remove &times;
+
+		hr
+		button +
+		dl
+			form
+				dt
+					h2 Note 1
+				dd
+					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos facere vitae error esse nobis amet ex temporibus ipsam nemo ratione.
+				div
+					button Save
+					button Cancel
+					button &times;
+			form
+				dt
+					h2 Note 2
+				dd
+					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi dolores provident fugit doloremque ipsa similique modi vitae odio tempora quibusdam.
+				div
+					button Save
+					button Cancel
+					button &times;
+			form
+				dt
+					h2 Note 3
+				dd
+					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque minus expedita blanditiis rerum, nihil quia dolorem, ab similique eligendi accusantium.
+				div
+					button Save
+					button Cancel
+					button &times;
+
+		//ul
+		//	li
+		//		h2 Note 1
+		//	li
+		//		form
+		//			input(type="text")
+		//			textarea(name="", cols="30", rows="10")
+		//			button Save
+		//			button Remove
+
+
+
