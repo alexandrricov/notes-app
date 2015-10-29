@@ -85,7 +85,7 @@
             var notes = JSON.parse(localStorage[_this.name]);
 
             for (var i = 0; i < notes.length; i++) {
-                if (notes[i].id == id) {
+                if (notes[i].id === id) {
                     notes.splice(i, 1);
                     break;
                 }

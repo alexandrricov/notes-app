@@ -25,7 +25,7 @@
         var _this = this;
 
         var buildedItems = items.map(function (item) {
-            return _this.buildNoteListItem(item)
+            return _this.buildNoteListItem(item);
         });
 
         this.noteList.innerHTML = buildedItems.join('\n');
@@ -51,20 +51,16 @@
         }
     };
 
-    View.prototype.showEditForm = function (callback) {
+    View.prototype.showEditForm = function () {
         var _this = this;
 
         _this.editNote.classList.add('m-show');
-
-
     };
 
-    View.prototype.hideEditForm = function (callback) {
+    View.prototype.hideEditForm = function () {
         var _this = this;
 
         _this.editNote.classList.remove('m-show');
-
-
     };
 
     window.app = window.app || {};

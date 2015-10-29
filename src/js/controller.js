@@ -31,7 +31,7 @@
             _this.renderList();
         });
 
-        _this.noteFilter.addEventListener('change', function (e) {
+        _this.noteFilter.addEventListener('change', function () {
             _this.saveFilterState();
         });
 
@@ -46,6 +46,13 @@
         _this.editForm.cancel.addEventListener('click', function () {
             _this.onCancelEditNote();
         });
+
+        window.addEventListener('focus', function () {
+            _this.restoreFilterState();
+            _this.renderList();
+        });
+
+        _this.restoreFilterState();
 
         return Controller._this;
     }
@@ -72,12 +79,18 @@
             });
     };
 
-    //Controller.prototype.onFilterChange = function () {
-    //
-    //};
-
     Controller.prototype.saveFilterState = function () {
+        var _this = this;
 
+        localStorage.notesFilter = JSON.stringify(_this.noteFilter.value);
+    };
+
+    Controller.prototype.restoreFilterState = function () {
+        var _this = this;
+
+        if (localStorage.notesFilter) {
+            _this.noteFilter.value = JSON.parse(localStorage.notesFilter);
+        }
     };
 
     Controller.prototype.createNote = function () {
@@ -116,9 +129,9 @@
         if (_this.editForm.id.value) {
             note.id = _this.editForm.id.value;
 
-            promise = _this.model.update(note)
+            promise = _this.model.update(note);
         } else {
-            promise = _this.model.create(note)
+            promise = _this.model.create(note);
         }
 
         promise.then(function (notes) {
