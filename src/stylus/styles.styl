@@ -6,31 +6,102 @@
 .edit-note
 	display none
 	fixed top 0 left 0 bottom 0 right 0
-	background-color rgba(0, 0, 0, .1)
+	padding 90px 0 10px
+	transition all .2s
+
+	animation-duration .5s
+	animation-name modal
+	animation-fill-mode forwards
 
 	&.m-show
 		display block
+		padding-top 100px
 
 	&__form
-		max-width 600px
-		margin-left: auto
-		margin-right: auto
+		background-color #fff
+		border 1px solid #ccc
+		border-radius 5px
+		position relative
+		padding 20px
 
+	&__save
+	&__remove
+		border 1px solid #eee
+		border-radius 5px
+		font-size 16px
+		background-color transparent
+		padding 5px 20px
+		transition all .2s
 
-	&__title
-		display block
-		width 100%
-		margin-bottom 10px
+	&__save
+		float left
 
-	&__text
-		display block
-		width 100%
-		margin-bottom 10px
+		&:hover
+			background-color #87CEFA
+			color #fff
+
+	&__remove
+		float right
+
+		&:hover
+			background-color #f08080
+			color #fff
+
+	&__cancel
+		absolute top 0 right 0
+		border 0
+		font-size 30px
+		background-color transparent
+		size 30px
+		padding 0
+		line-height 30px
+		transition all .2s
+
+		&:hover
+			color #aaa
 
 .note-list
 	&__item
 		clearfix()
-		margin-bottom 10px
+		padding 10px 0
+		cursor pointer
+		transition background-color .2s
 
 		&:hover
-			background-color lightblue
+			background-color #fdfdfd
+
+		+ .note-list__item
+			border-top: 1px dashed #eee
+
+.note
+	&__title
+		font-size 20px
+		font-weight bold
+		margin-bottom: 10px
+		overflow ellipsis
+
+	&__text
+		color #aaa
+		overflow ellipsis
+
+.add-note
+	border 1px solid #eee
+	border-radius 5px
+	font-size 16px
+	background-color transparent
+	padding 5px 20px
+	transition all .2s
+	margin-bottom 20px
+	width 100%
+	display block
+
+	&:hover
+		background-color #87CEFA
+		color #fff
+
+@keyframes modal
+	from
+		background-color rgba(0, 0, 0, 0)
+
+	to
+		background-color rgba(0, 0, 0, .6)

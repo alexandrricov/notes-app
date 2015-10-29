@@ -3,13 +3,18 @@ extends blocks/layout.jade
 block content
 	.l-container
 		h1.l-h1 LiveTex notes
+		button.add-note(type="button") + Add note
+		input.l-input.note-filter(type="text", placeholder="Search by title")
 		ul.note-list
 
 	.edit-note
-		form.edit-note__form.l-container
-			h2.l-h2 Edit note
-			input.edit-note__title(type="text")
-			textarea.edit-note__text(name="", cols="30", rows="10")
-			button.edit-note__submit Save
-			button.edit-note__cancel Cancel
-			button.edit-note__remove Remove
+		.l-container
+			form.edit-note__form
+				button.edit-note__cancel(type="button") &times;
+				h2.l-h2 Edit note
+				input.edit-note__id(type="hidden")
+				input.l-input.edit-note__title(type="text", placeholder="Title")
+				textarea.l-textarea.edit-note__text(placeholder="Text")
+				.u-clearfix
+					button.edit-note__save(type="button") Save
+					button.edit-note__remove(type="button") Remove

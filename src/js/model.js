@@ -25,11 +25,11 @@
         return new Promise(function (resolve, reject) {
             var notes = JSON.parse(localStorage[_this.name]);
 
-            data.id = new Date().getTime();
+            data.id = 'ID-' + new Date().getTime();
             notes.push(data);
 
             localStorage[_this.name] = JSON.stringify(notes);
-            resolve([data]);
+            resolve(notes);
         });
     };
 
@@ -40,11 +40,14 @@
             var notes = JSON.parse(localStorage[_this.name]);
 
             notes = notes.filter(function (note) {
-                for (var q in query) {
-                    if (query[q] !== note[q]) {
-                        return false;
+                if (typeof query === 'object') {
+                    if (query.id) {
+                        return (query.id === note.id);
+                    } else if (query.title) {
+                        return (note.title.indexOf(query.title) !== -1);
                     }
                 }
+
                 return true;
             });
 
@@ -71,7 +74,7 @@
             }
 
             localStorage[_this.name] = JSON.stringify(notes);
-            resolve([data]);
+            resolve(notes);
         });
     };
 
@@ -80,20 +83,18 @@
 
         return new Promise(function (resolve, reject) {
             var notes = JSON.parse(localStorage[_this.name]);
-            var removedItems;
 
             for (var i = 0; i < notes.length; i++) {
                 if (notes[i].id == id) {
-                    removedItems = notes.splice(i, 1);
+                    notes.splice(i, 1);
                     break;
                 }
             }
 
-            localStorage[_this.name] = JSON.stringify(data);
-            resolve(removedItems.length ? removedItems : null);
+            localStorage[_this.name] = JSON.stringify(notes);
+            resolve(notes);
         });
     };
-
 
 
     window.app = window.app || {};

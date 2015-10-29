@@ -10,7 +10,12 @@
         this.editNote = document.querySelector('.edit-note');
 
         this.templates = {
-            noteListItem: '<li class="note-list__item" data-id="{{id}}">{{title}}</li>'
+            noteListItem: '<li class="note-list__item" data-id="{{id}}">' +
+            '<article class="note">' +
+            '<h1 class="note__title">{{title}}</h1>' +
+            '<p class="note__text">{{text}}</p>' +
+            '<article>' +
+            '</li>'
         };
 
         return View._this;
@@ -32,6 +37,7 @@
 
         template = template.replace('{{id}}', item.id);
         template = template.replace('{{title}}', item.title);
+        template = template.replace('{{text}}', item.text);
 
         return template;
     };
