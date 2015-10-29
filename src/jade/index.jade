@@ -4,13 +4,11 @@ block content
 	.l-container
 		h1.l-h1 LiveTex notes
 		ul.note-list
-			//li.note-list__item Note 1
-			//li.note-list__item Note 2
-			//li.note-list__item Note 3
 
-		h2.l-h2 Edit note
-		form.edit-note
-			input.edit-note__heading(type="text")
+	.edit-note
+		form.edit-note__form.l-container
+			h2.l-h2 Edit note
+			input.edit-note__title(type="text")
 			textarea.edit-note__text(name="", cols="30", rows="10")
 			button.edit-note__submit Save
 			button.edit-note__cancel Cancel

@@ -39,12 +39,12 @@
         return new Promise(function (resolve, reject) {
             var notes = JSON.parse(localStorage[_this.name]);
 
-            notes = notes.filter(function (todo) {
-                //for (var q in query) {
-                //    if (query[q] !== todo[q]) {
-                //        return false;
-                //    }
-                //}
+            notes = notes.filter(function (note) {
+                for (var q in query) {
+                    if (query[q] !== note[q]) {
+                        return false;
+                    }
+                }
                 return true;
             });
 

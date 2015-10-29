@@ -36,6 +36,31 @@
         return template;
     };
 
+    View.prototype.bindListItemClick = function (callback) {
+        var items = document.querySelectorAll('.note-list__item');
+        for (var i = 0, ln = items.length; i < ln; i++) {
+            items[i].addEventListener('click', function () {
+                callback(this);
+            });
+        }
+    };
+
+    View.prototype.showEditForm = function (callback) {
+        var _this = this;
+
+        _this.editNote.classList.add('m-show');
+
+
+    };
+
+    View.prototype.hideEditForm = function (callback) {
+        var _this = this;
+
+        _this.editNote.classList.remove('m-show');
+
+
+    };
+
     window.app = window.app || {};
     window.app.View = View;
 })();

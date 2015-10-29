@@ -4,10 +4,20 @@
 @import 'main'
 
 .edit-note
-	// float left
-	// width 50%
+	display none
+	fixed top 0 left 0 bottom 0 right 0
+	background-color rgba(0, 0, 0, .1)
 
-	&__heading
+	&.m-show
+		display block
+
+	&__form
+		max-width 600px
+		margin-left: auto
+		margin-right: auto
+
+
+	&__title
 		display block
 		width 100%
 		margin-bottom 10px
