@@ -1,5 +1,10 @@
 # Notes application
 
+## Demo
+For live demo go to [padaril.github.io/notes-app](http://padaril.github.io/notes-app/)
+
+Also you can clone, build and run application locally (steps described below).
+
 ## Project installation
 ```
   $ cd /path/to/project/
