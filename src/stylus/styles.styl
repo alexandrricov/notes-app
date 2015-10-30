@@ -6,8 +6,7 @@
 .edit-note
 	display none
 	fixed top 0 left 0 bottom 0 right 0
-	padding 90px 0 10px
-	transition all .2s
+	padding 100px 0 10px
 
 	animation-duration .5s
 	animation-name modal
@@ -15,7 +14,6 @@
 
 	&.m-show
 		display block
-		padding-top 100px
 
 	&__form
 		background-color #fff
@@ -102,6 +100,8 @@
 @keyframes modal
 	from
 		background-color rgba(0, 0, 0, 0)
+		padding-top 80px
 
 	to
 		background-color rgba(0, 0, 0, .6)
+		padding-top 100px
