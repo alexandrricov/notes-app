@@ -1,7 +1,7 @@
 # Notes application
 
 ## Demo
-For live demo go to [padaril.github.io/notes-app](http://padaril.github.io/notes-app/)
+For live demo go to [alrykov.github.io/notes-app](http://alrykov.github.io/notes-app/)
 
 Also you can clone, build and run application locally (steps described below).
 
